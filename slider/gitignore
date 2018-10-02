@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Testing
+coverage/
+
+# Mats
+mats/*
+!mats/assets/
+
+# Public
+public/*
+!public/favicon.png
+!public/index.html
+
+# Others
+.idea/
+TODO.txt
