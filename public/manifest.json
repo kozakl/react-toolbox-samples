@@ -1,6 +1,6 @@
 {
-  "short_name": "Flexbox - Samples",
-  "name": "Flexbox - Samples",
+  "short_name": "React Template",
+  "name": "React Template TS",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#E8E0BC",

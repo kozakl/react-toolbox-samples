@@ -1,31 +1,26 @@
-import * as React from 'react';
-import {Redirect, Route, Switch} from 'react-router';
-import {HashRouter} from 'react-router-dom';
-import {FlexSample} from '../../pages/flex-sample';
-import {GrowSample} from '../../pages/grow-sample';
-import {WrapSample} from '../../pages/wrap-sample';
+import {PureComponent} from 'react';
+import React from 'react';
+import style from './Content.pcss';
 
-export default function Content()
+export default class Content extends PureComponent<Props>
 {
-    return (
-        <HashRouter>
-            <>
-                <select
-                    style={{position: 'fixed', top: '0'}}
-                    defaultValue={location.hash}
-                    onChange={(event)=>
-                        window.location.href = event.target.value}>
-                    <option value="#/flex">Flex</option>
-                    <option value="#/grow">Grow</option>
-                    <option value="#/wrap">Wrap</option>
-                </select>
-                <Switch>
-                    <Redirect from="/" to='/flex' exact/>
-                    <Route path="/flex" component={FlexSample}/>
-                    <Route path="/grow" component={GrowSample}/>
-                    <Route path="/wrap" component={WrapSample}/>
-                </Switch>
-            </>
-        </HashRouter>
-    );
+    onClick = ()=> {
+        console.log(this.props.message);
+    };
+    
+    render()
+    {
+        return (
+            <div className={style.content}>
+                <div className={style.logo}>
+                    <img src={require('res/logo.svg')}/>
+                </div>
+                <button className={style.button} onClick={this.onClick}>Click</button>
+            </div>
+        );
+    }
+}
+
+interface Props {
+    message:string;
 }
