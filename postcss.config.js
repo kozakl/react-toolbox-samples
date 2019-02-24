@@ -9,13 +9,6 @@ module.exports = {
         'postcss-mixins': {},
         'postcss-simple-vars': {},
         'postcss-nested': {},
-        'postcss-preset-env': {
-            features: {
-                'custom-properties': {
-                    preserve: false
-                }
-            }
-        },
-        'postcss-color-function': {}
+        'postcss-cssnext': {}
     }
 };

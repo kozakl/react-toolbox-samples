@@ -1,9 +1,9 @@
 import './main.pcss';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import {Content} from './components/content';
-import React from 'react';
-import ReactDOM from 'react-dom';
 
 ReactDOM.render(
-    <Content message={'Clicked!'}/>,
+    <Content/>,
     document.getElementById('main-root')
 );

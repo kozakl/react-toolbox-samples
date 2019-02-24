@@ -1,26 +1,31 @@
-import {PureComponent} from 'react';
-import React from 'react';
-import style from './Content.pcss';
+import * as React from 'react';
+import {Redirect, Route, Switch} from 'react-router';
+import {HashRouter} from 'react-router-dom';
+import {DashoffsetSample} from '../../pages/dashoffset-sample';
+import {MarkerSample} from '../../pages/marker-sample';
+import {PatternSample} from '../../pages/pattern-sample';
 
-export default class Content extends PureComponent<Props>
+export default function Content()
 {
-    onClick = ()=> {
-        console.log(this.props.message);
-    };
-    
-    render()
-    {
-        return (
-            <div className={style.content}>
-                <div className={style.logo}>
-                    <img src={require('res/logo.svg')}/>
-                </div>
-                <button className={style.button} onClick={this.onClick}>Click</button>
-            </div>
-        );
-    }
-}
-
-interface Props {
-    message:string;
+    return (
+        <HashRouter>
+            <>
+                <select
+                    style={{position: 'fixed', top: '0'}}
+                    defaultValue={location.hash}
+                    onChange={(event)=>
+                        window.location.href = event.target.value}>
+                    <option value="#/dashoffset">Dashoffset</option>
+                    <option value="#/marker">Marker</option>
+                    <option value="#/pattern-sample">Pattern</option>
+                </select>
+                <Switch>
+                    <Redirect from="/" to='/dashoffset' exact/>
+                    <Route path="/dashoffset" component={DashoffsetSample}/>
+                    <Route path="/marker" component={MarkerSample}/>
+                    <Route path="/pattern-sample" component={PatternSample}/>
+                </Switch>
+            </>
+        </HashRouter>
+    );
 }
