@@ -1,9 +1,6 @@
 import * as React from 'react';
 import {Redirect, Route, Switch} from 'react-router';
 import {HashRouter} from 'react-router-dom';
-import {DashoffsetSample} from '../../pages/dashoffset-sample';
-import {MarkerSample} from '../../pages/marker-sample';
-import {PatternSample} from '../../pages/pattern-sample';
 
 export default function Content()
 {
@@ -21,9 +18,6 @@ export default function Content()
                 </select>
                 <Switch>
                     <Redirect from="/" to='/dashoffset' exact/>
-                    <Route path="/dashoffset" component={DashoffsetSample}/>
-                    <Route path="/marker" component={MarkerSample}/>
-                    <Route path="/pattern-sample" component={PatternSample}/>
                 </Switch>
             </>
         </HashRouter>
