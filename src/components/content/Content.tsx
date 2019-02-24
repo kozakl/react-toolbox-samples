@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Redirect, Route, Switch} from 'react-router';
 import {HashRouter} from 'react-router-dom';
+import {SliderSample} from '../../pages/slider-sample';
 
 export default function Content()
 {
@@ -18,6 +19,7 @@ export default function Content()
                 </select>
                 <Switch>
                     <Redirect from="/" to='/dashoffset' exact/>
+                    <Route path="/dashoffset" component={SliderSample}/>
                 </Switch>
             </>
         </HashRouter>
