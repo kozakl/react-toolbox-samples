@@ -1,5 +1,6 @@
-import * as React from 'react';
-import SliderCore, {SliderProps} from 'react-toolbox/lib/slider';
+import {SliderProps} from 'react-toolbox/lib/slider';
+import React from 'react';
+import SliderCore from 'react-toolbox/lib/slider';
 /**
  * @author kozakluke@gmail.com
  */
